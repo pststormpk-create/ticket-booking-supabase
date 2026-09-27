@@ -1,16 +1,19 @@
+require("dotenv").config();
 const express = require("express");
 
 const {
   listPerformances,
   getPerformance,
-} = require("./controllers/performanceController");
+} = require("./server/src/controllers/performanceController");
 
 const {
   createReservation,
   cancelReservation,
-} = require("./controllers/reservationController");
+} = require("./server/src/controllers/reservationController");
 
-const { getReservationsByEmail } = require("./controllers/userController");
+const {
+  getReservationsByEmail,
+} = require("./server/src/controllers/userController");
 
 const app = express();
 

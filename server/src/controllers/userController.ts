@@ -1,4 +1,5 @@
-const supabase = require("./client");
+import { supabase } from "../lib/supabase";
+import { badRequest } from "../lib/httpError";
 
 export async function getReservationsByEmail(email: string) {
   if (!email) throw badRequest("email 쿼리가 필요합니다.");

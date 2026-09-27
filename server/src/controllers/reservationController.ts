@@ -1,10 +1,17 @@
-const supabase = require("./client");
+import { supabase } from "../lib/supabase";
+import { badRequest, notFound } from "../lib/httpError";
+
+type CreateReservationInput = {
+  seatId: number;
+  customerName: string;
+  customerEmail: string;
+};
 
 export async function createReservation({
   seatId,
   customerName,
   customerEmail,
-}) {
+}: CreateReservationInput) {
   if (!seatId || !customerName || !customerEmail) {
     throw badRequest("seatId, customerName, customerEmail이 필요합니다.");
   }

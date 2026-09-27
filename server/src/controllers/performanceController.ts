@@ -1,4 +1,5 @@
-const supabase = require("./client");
+import { supabase } from "../lib/supabase";
+import { notFound } from "../lib/httpError";
 
 export async function listPerformances() {
   const { data, error } = await supabase
